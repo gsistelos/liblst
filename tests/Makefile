@@ -6,11 +6,13 @@ OBJ = $(SRC:.c=.o)
 
 LIBLST_PATH = ..
 
+LIBLST_INCLUDE = $(LIBLST_PATH)/include
+
 LIBLST = $(LIBLST_PATH)/liblst.a
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -I../include
+CFLAGS = -Wall -Wextra -Werror -I$(LIBLST_INCLUDE)
 
 RM = rm -f
 
@@ -19,7 +21,7 @@ RM = rm -f
 all: $(TARGET)
 
 $(TARGET): $(OBJ) $(LIBLST)
-	$(CC) -lcriterion $(OBJ) $(LIBLST) -o $(TARGET)
+	$(CC) $(OBJ) -lcriterion -L$(LIBLST_PATH) -llst -o $(TARGET)
 
 $(LIBLST):
 	make -C $(LIBLST_PATH)
