@@ -2,7 +2,7 @@
 
 #include <criterion/criterion.h>
 
-// assert the node is removed and the tail didnt change
+// assert the node is removed from head and other nodes didnt change position
 Test(lst_pop_front_test, pop_front) {
     t_lst lst;
     lst_init(&lst);
