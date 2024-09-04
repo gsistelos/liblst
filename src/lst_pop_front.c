@@ -1,4 +1,5 @@
 #include "liblst.h"
+
 #include <stdlib.h>
 
 void lst_pop_front(t_lst *lst, void (*free_func)(void *)) {

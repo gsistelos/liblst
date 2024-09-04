@@ -1,4 +1,5 @@
 #include "liblst.h"
+
 #include <stdlib.h>
 
 int lst_push_front(t_lst *lst, void *data) {
