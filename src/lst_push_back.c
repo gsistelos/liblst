@@ -11,6 +11,8 @@ int lst_push_back(t_lst *lst, void *data) {
 
     if (!lst->head)
         lst->head = node;
+    else
+        lst->tail->next = node;
 
     lst->tail = node;
 

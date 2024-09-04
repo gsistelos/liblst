@@ -23,5 +23,6 @@ Test(lst_push_front_test, push_front) {
 
     lst_push_front(&lst, str3);
     cr_assert_str_eq(lst.head->data, str3);
+    cr_assert_str_eq(lst.head->next->data, str2);
     cr_assert_str_eq(lst.tail->data, str);
 }
