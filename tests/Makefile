@@ -4,15 +4,13 @@ SRC = $(wildcard src/*.c)
 
 OBJ = $(SRC:.c=.o)
 
-LIBLST_PATH = ..
+LIB_PATH = ..
 
-LIBLST_INCLUDE = $(LIBLST_PATH)/include
-
-LIBLST = $(LIBLST_PATH)/liblst.a
+LIB = $(LIB_PATH)/liblst.a
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -I$(LIBLST_INCLUDE)
+CFLAGS = -Wall -Wextra -Werror -I$(LIB_PATH)/include
 
 RM = rm -f
 
@@ -20,20 +18,20 @@ RM = rm -f
 .PHONY: all
 all: $(TARGET)
 
-$(TARGET): $(OBJ) $(LIBLST)
-	$(CC) $(OBJ) -lcriterion -L$(LIBLST_PATH) -llst -o $(TARGET)
+$(TARGET): $(OBJ) $(LIB)
+	$(CC) $(OBJ) -lcriterion -L$(LIB_PATH) -llst -o $(TARGET)
 
-$(LIBLST):
-	make -C $(LIBLST_PATH)
+$(LIB):
+	make -C $(LIB_PATH)
 
 .PHONY: clean
 clean:
-	make -C $(LIBLST_PATH) clean
+	make -C $(LIB_PATH) clean
 	$(RM) $(OBJ)
 
 .PHONY: fclean
 fclean:
-	make -C $(LIBLST_PATH) fclean
+	make -C $(LIB_PATH) fclean
 	$(RM) $(OBJ) $(TARGET)
 
 .PHONY: re

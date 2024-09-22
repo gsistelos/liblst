@@ -4,9 +4,5 @@
 # Obj
 *.o
 
-# IDE files
-.clang-format
-compile_flags.txt
-
 # Executables
 test

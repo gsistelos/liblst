@@ -4,9 +4,9 @@ SRC = $(wildcard src/*.c)
 
 OBJ = $(SRC:.c=.o)
 
-CC = gcc
+CC = gcc -O3
 
-CFLAGS = -Wall -Werror -Wextra -O3 -Iinclude
+CFLAGS = -Wall -Werror -Wextra -Iinclude
 
 RM = rm -f
 
