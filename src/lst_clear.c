@@ -16,4 +16,5 @@ void lst_clear(t_lst *lst, void (*free_func)(void *)) {
 
     lst->head = NULL;
     lst->tail = NULL;
+    lst->size = 0;
 }

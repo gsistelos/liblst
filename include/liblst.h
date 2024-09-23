@@ -14,7 +14,11 @@ typedef struct s_node {
 typedef struct s_lst {
     t_node *head;
     t_node *tail;
+    size_t size;
 } t_lst;
+
+// allocates a new lst
+t_lst *lst_new(void);
 
 // initializes lst head and tail to null
 void lst_init(t_lst *lst);
@@ -32,5 +36,8 @@ void lst_pop_front(t_lst *lst, void (*free_func)(void *));
 
 // pops all nodes from the list, using the given free_func function
 void lst_clear(t_lst *lst, void (*free_func)(void *));
+
+// clears and frees the lst
+void lst_del(t_lst *lst, void (*free_func)(void *));
 
 #endif // LST_H

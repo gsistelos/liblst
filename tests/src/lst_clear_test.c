@@ -14,4 +14,5 @@ Test(lst_clear_test, clear) {
 
     cr_assert_eq(lst.head, NULL);
     cr_assert_eq(lst.tail, NULL);
+    cr_assert_eq(lst.size, 0);
 }

@@ -17,6 +17,7 @@ int lst_push_front(t_lst *lst, void *data) {
     }
 
     lst->head = node;
+    lst->size++;
 
     return 0;
 }

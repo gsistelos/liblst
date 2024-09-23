@@ -14,13 +14,16 @@ Test(lst_push_front_test, push_front) {
     lst_push_front(&lst, str);
     cr_assert_str_eq(lst.head->data, str);
     cr_assert_str_eq(lst.tail->data, str);
+    cr_assert_eq(lst.size, 1);
 
     lst_push_front(&lst, str2);
     cr_assert_str_eq(lst.head->data, str2);
     cr_assert_str_eq(lst.tail->data, str);
+    cr_assert_eq(lst.size, 2);
 
     lst_push_front(&lst, str3);
     cr_assert_str_eq(lst.head->data, str3);
     cr_assert_str_eq(lst.head->next->data, str2);
     cr_assert_str_eq(lst.tail->data, str);
+    cr_assert_eq(lst.size, 3);
 }

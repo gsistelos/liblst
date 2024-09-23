@@ -16,6 +16,7 @@ int lst_push_back(t_lst *lst, void *data) {
         lst->tail->next = node;
 
     lst->tail = node;
+    lst->size++;
 
     return 0;
 }

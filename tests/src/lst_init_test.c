@@ -8,4 +8,5 @@ Test(lst_init_test, init) {
 
     cr_assert_eq(lst.head, NULL);
     cr_assert_eq(lst.tail, NULL);
+    cr_assert_eq(lst.size, 0);
 }

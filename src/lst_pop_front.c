@@ -14,4 +14,6 @@ void lst_pop_front(t_lst *lst, void (*free_func)(void *)) {
 
     free_func(node->data);
     free(node);
+
+    lst->size--;
 }

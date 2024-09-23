@@ -18,12 +18,15 @@ Test(lst_pop_front_test, pop_front) {
     lst_pop_front(&lst, free);
     cr_assert_str_eq(lst.head->data, str2);
     cr_assert_str_eq(lst.tail->data, str3);
+    cr_assert_eq(lst.size, 2);
 
     lst_pop_front(&lst, free);
     cr_assert_str_eq(lst.head->data, str3);
     cr_assert_str_eq(lst.tail->data, str3);
+    cr_assert_eq(lst.size, 1);
 
     lst_pop_front(&lst, free);
     cr_assert_eq(lst.head, NULL);
     cr_assert_eq(lst.tail, NULL);
+    cr_assert_eq(lst.size, 0);
 }
